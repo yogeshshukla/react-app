@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// App.js
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Nav from './components/nav.component';
+import Routing from './components/routing';
+import AuthHelperMethods from "./AuthHelperMethods";
+
+
+const Auth = new AuthHelperMethods();
+class App extends Component {
+  
+  render() {
+    const contStyle = {
+      height: 'max-content',
+      background: '#fff'
+    }
+     return (
+        <div className="container" style={contStyle}>
+          <Nav />
+          <br/>
+          <h2>Welcome to Headless Drupal CRUD</h2> <br/>
+          <Routing />
+        </div>
+      
+    );
+  }
 }
-
 export default App;
